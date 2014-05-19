@@ -7,7 +7,6 @@ RUN cd /usr/bin && tar -xzvf btsync.tar.gz && rm btsync.tar.gz
 RUN mkdir -p /btsync/.sync
 EXPOSE 8888
 EXPOSE 55555
-ENTRYPOINT ["btsync"]
-# Default arguments:
-CMD ["--config", "/btsync/btsync.conf", "--nodaemon"]
-ADD btsync.conf /btsync/btsync.conf
+ADD start-btsync /usr/bin/start-btsync
+RUN chmod +x /usr/bin/start-btsync
+ENTRYPOINT ["start-btsync"]
