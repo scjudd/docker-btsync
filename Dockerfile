@@ -10,4 +10,5 @@ EXPOSE 8888
 EXPOSE 55555
 ADD start-btsync /usr/bin/start-btsync
 RUN chmod +x /usr/bin/start-btsync
+VOLUME ["/data"]
 ENTRYPOINT ["start-btsync"]
