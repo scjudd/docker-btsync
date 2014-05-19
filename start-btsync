@@ -1,4 +1,5 @@
 #!/bin/bash
+SECRET="${@}"
 : ${SECRET:=`btsync --generate-secret`}
 
 echo "Starting btsync with secret: $SECRET"
